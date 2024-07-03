@@ -1,0 +1,35 @@
+name: Build and deploy documentation
+
+on:
+  push:
+    branches:
+      - 'master'
+      - 'main'
+    paths:
+      - 'documentation/**'
+      - '.github/workflows/build_and_deploy_documentation.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy-documentation:
+    name: Build and Deploy Documentation
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+      - name: Install dependencies
+        run: |
+          pip install sphinx sphinx_rtd_theme myst_parser
+      - name: Build and deploy documentation
+        run: |
+          sphinx-build -M html documentation/source/ documentation/build/
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        with:
+          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _build/
+          force_orphan: true
