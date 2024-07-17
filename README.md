@@ -2,11 +2,11 @@
 
 The common information model is the basis to make any OPC UA server compatible with the SWAP IT architecture. The Model 
 consits of a ModuleType which is required by an Execution Engine to execute an underlying Service. Besides it contains 
-a set of data types that are required to provide a specific kind of information in a generic was, such as a data type for queues.
+a set of data types that are required to provide a specific kind of information in a generic way, such as a data type for queues.
 Th following will explain the model in more detail
 
 <p align="center">
-    <img src="documentation/source/images/ModuleType.PNG" alt="">
+    <img src="docs/source/images/ModuleType.PNG" alt="">
 </p>
 
 
@@ -32,7 +32,7 @@ To build the documentation, sphinx and the sphinx rtd themes are required. Both 
 Build the documentation:
 
     cd swap-it-open62541-server-template
-    sphinx-build -M html documentation/source/ documentation/build/
+    sphinx-build -M html docs/source/ docs/build/
 
 
 ## Instantiating individual Modules 
@@ -73,12 +73,12 @@ a structure of information models in required with dependencies among them. Howe
 integrated into any OPC UA server.
 
 <p align="center">
-    <img src="documentation/source/images/img_1.png">
+    <img src="docs/source/images/img_1.png">
 </p>
 
 
 The folder usage provides example files that should illustrate how to build such a information model struture.
 
 Since we also provide a utility function to make open62541 (https://www.open62541.org/) based OPC UA Server compatible with the architecture, 
-we highly recommend to use this template. It can be found here ().
+we highly recommend to use this template. It can be found here (https://github.com/FraunhoferIOSB/swap-it-open62541-server-template).
 
