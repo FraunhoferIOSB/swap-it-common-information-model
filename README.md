@@ -28,11 +28,14 @@ To build the documentation, sphinx and the sphinx rtd themes are required. Both 
 
     pip install sphinx 
     pip install sphinx-rtd-theme
+    pip install myst_parser
 
 Build the documentation:
 
     cd swap-it-open62541-server-template
+    #build html
     sphinx-build -M html documentation/source/ documentation/build/
+    
 
 
 ## Instantiating individual Modules 
