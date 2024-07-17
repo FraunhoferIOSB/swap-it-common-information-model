@@ -1,22 +1,6 @@
 name: Build and deploy documentation
 
-on:
-  push:
-    branches:
-      - 'master'
-      - 'main'
-      - 'gh-pages'
-    paths:
-      - 'docs/**'
-      - '.github/workflows/build_and_deploy_documentation.yml'
-  pull_request:
-    branches:
-      - 'master'
-      - 'main'
-      - 'gh-pages'
-    paths:
-      - 'docs/**'
-      - '.github/workflows/build_and_deploy_documentation.yml'    
+on: [push, pull_request, workflow_dispatch] 
 
 permissions:
   contents: write
@@ -33,12 +17,11 @@ jobs:
           pip install sphinx sphinx_rtd_theme myst_parser
       - name: Build and deploy documentation
         run: |
-          sphinx-build docs/source _build
+          sphinx-build -M html docs/source docs/build
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         with:
           publish_branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _build/
-          force_orphan: true
+          publish_dir: docs/build/html
