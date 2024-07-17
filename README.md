@@ -2,7 +2,7 @@
 
 The common information model is the basis to make any OPC UA server compatible with the SWAP IT architecture. The Model 
 consits of a ModuleType which is required by an Execution Engine to execute an underlying Service. Besides it contains 
-a set of data types that are required to provide a specific kind of information in a generic was, such as a data type for queues.
+a set of data types that are required to provide a specific kind of information in a generic way, such as a data type for queues.
 Th following will explain the model in more detail
 
 <p align="center">

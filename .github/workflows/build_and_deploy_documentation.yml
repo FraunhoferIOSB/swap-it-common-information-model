@@ -1,6 +1,5 @@
 name: Build and deploy documentation
 
-
 on: [push, pull_request, workflow_dispatch]
 
 permissions:
@@ -9,7 +8,7 @@ permissions:
 jobs:
   build-and-deploy-documentation:
     name: Build and Deploy Documentation
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -18,12 +17,13 @@ jobs:
           pip install sphinx sphinx_rtd_theme myst_parser
       - name: Build and deploy documentation
         run: |
-          sphinx-build docs/source _build
+          sphinx-build -M html docs/source docs/build
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        if: ${{ github.event_name == 'push'}}
         with:
-          publish_branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _build/
+          publish_dir: docs/build/html
           force_orphan: true
+          publish_branch: gh-pages
+
