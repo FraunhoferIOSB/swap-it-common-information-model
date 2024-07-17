@@ -32,7 +32,7 @@ To build the documentation, sphinx and the sphinx rtd themes are required. Both 
 Build the documentation:
 
     cd swap-it-open62541-server-template
-    sphinx-build -M html documentation/source/ documentation/build/
+    sphinx-build -M html doc/source/ doc/build/
 
 
 ## Instantiating individual Modules 
