@@ -1,7 +1,22 @@
 name: Build and deploy documentation
 
-
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+    branches:
+      - 'master'
+      - 'main'
+      - 'gh-pages'
+    paths:
+      - 'doc/**'
+      - '.github/workflows/build_and_deploy_documentation.yml'
+  pull_request:
+    branches:
+      - 'master'
+      - 'main'
+      - 'gh-pages'
+    paths:
+      - 'doc/**'
+      - '.github/workflows/build_and_deploy_documentation.yml'    
 
 permissions:
   contents: write
@@ -9,7 +24,7 @@ permissions:
 jobs:
   build-and-deploy-documentation:
     name: Build and Deploy Documentation
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
