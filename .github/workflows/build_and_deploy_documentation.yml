@@ -15,7 +15,7 @@ on:
     paths:
       - 'documentation/**'
       - '.github/workflows/build_and_deploy_documentation.yml'
-  pull_request:
+
   
 permissions:
   contents: write
