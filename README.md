@@ -6,7 +6,7 @@ a set of data types that are required to provide a specific kind of information 
 Th following will explain the model in more detail
 
 <p align="center">
-    <img src="documentation/source/images/ModuleType.PNG" alt="">
+    <img src="doc/source/images/ModuleType.PNG" alt="">
 </p>
 
 
@@ -73,7 +73,7 @@ a structure of information models in required with dependencies among them. Howe
 integrated into any OPC UA server.
 
 <p align="center">
-    <img src="documentation/source/images/img_1.png">
+    <img src="doc/source/images/img_1.png">
 </p>
 
 
