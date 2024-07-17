@@ -7,7 +7,7 @@ on:
       - 'main'
       - 'gh-pages'
     paths:
-      - 'doc/**'
+      - 'doc/source/**'
       - '.github/workflows/build_and_deploy_documentation.yml'
   pull_request:
     branches:
@@ -15,7 +15,7 @@ on:
       - 'main'
       - 'gh-pages'
     paths:
-      - 'doc/**'
+      - 'doc/source/**'
       - '.github/workflows/build_and_deploy_documentation.yml'    
 
 permissions:
