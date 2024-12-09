@@ -5,9 +5,9 @@
 
     Copyright 2023-2024 (c) Fraunhofer IOSB (Author: Florian Düwel)
 
-
-Common Information Model
-========================
+================================
+SWAP-IT Common Information Model
+================================
 
 The common information model is an OCP UA information model to make OPC UA Server compatible with the SWAP-IT software. In this context,
 the common information model provides all OPC UA BaseTypes that a resource requires to interact with an Execution Engine and thus, become available
@@ -29,6 +29,7 @@ All graphical representations in this documentation are based on the graphical n
 
    custom_data_types
    object_types
+   swap-it-architecture
    related_projects
    glossary
    contact
