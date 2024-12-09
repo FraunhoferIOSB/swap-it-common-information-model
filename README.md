@@ -6,7 +6,7 @@ a set of data types that are required to provide a specific kind of information 
 Th following will explain the model in more detail
 
 <p align="center">
-    <img src="docs/source/images/ModuleType.PNG" alt="">
+    <img src="documentation/source/images/ModuleType.PNG" alt="">
 </p>
 
 
@@ -21,18 +21,6 @@ Even though the files are provided in this repository, they can be recreated  wi
 2. **CommonModelDesign.csv**: Numeric identifiers for the elements of the common model  
 3. **SWAP.Fraunhofer.Common.Model.NodeSet2.xml**: Contains the concrete Information Model to be uploaded into an OPC UA Server
 4. **SWAP.Fraunhofer.Common.Model.NodeSet2.bsd**: files to describe data types of the information model as defined in OPC UA Spec Part 3 Annex C
-
-
-## Build Documentation
-To build the documentation, sphinx and the sphinx rtd themes are required. Both can be installed with:
-
-    pip install sphinx 
-    pip install sphinx-rtd-theme
-
-Build the documentation:
-
-    cd swap-it-open62541-server-template
-    sphinx-build -M html docs/source/ docs/build/
 
 
 ## Instantiating individual Modules 
@@ -73,7 +61,7 @@ a structure of information models in required with dependencies among them. Howe
 integrated into any OPC UA server.
 
 <p align="center">
-    <img src="docs/source/images/img_1.png">
+    <img src="documentation/source/images/img_1.png">
 </p>
 
 
@@ -82,3 +70,23 @@ The folder usage provides example files that should illustrate how to build such
 Since we also provide a utility function to make open62541 (https://www.open62541.org/) based OPC UA Server compatible with the architecture, 
 we highly recommend to use this template. It can be found here (https://github.com/FraunhoferIOSB/swap-it-open62541-server-template).
 
+## Related Projects
+Since the SWAP-IT Regitry Module is part of the SWAP-IT Architecture, its application is linked to other SWAP-IT projects. Here are some other relevant repositories:
+
+- SWAP-IT Demo Scenario: https://github.com/swap-it/demo-scenario
+- SWAP-IT open62541 server-template: https://github.com/FraunhoferIOSB/swap-it-open62541-server-template
+- SWAP-IT Execution Engine: https://github.com/FraunhoferIOSB/swap-it-execution-engine
+- SWAP-IT Registry Module: https://github.com/FraunhoferIOSB/swap-it-registry-module
+- PFDL Scheduler: https://github.com/iml130/pfdl
+- SWAP-IT Dashboard: https://github.com/iml130/swap-it-dashboard
+
+## Build Documentation
+To build the documentation, sphinx and the sphinx rtd themes are required. Both can be installed with:
+
+    pip install sphinx 
+    pip install sphinx-rtd-theme
+
+Build the documentation:
+
+    cd swap-it-open62541-server-template
+    sphinx-build -M html documentation/source/ documentation/build/
