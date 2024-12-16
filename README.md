@@ -9,7 +9,7 @@ The following image illustrates the model in more detail:
     <img src="documentation/source/images/ModuleType.PNG" alt="">
 </p>
 
-An extensive documentation or the SWAP-IT Registry Module can be found here: https://fraunhoferiosb.github.io/swap-it-registry-module
+An extensive documentation or the SWAP-IT Registry Module can be found here: https://fraunhoferiosb.github.io/swap-it-common-information-model/
 or build from the repository. Here, sphinx and the sphinx rtd theme are required. Both can be installed with:
 
     pip install sphinx 
