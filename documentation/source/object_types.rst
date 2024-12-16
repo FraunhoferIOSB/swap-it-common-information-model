@@ -38,19 +38,19 @@ Queue
 ..........
 
 Contains a ServiceQueue Object that has a TypeDefinition of the QueueObjectType. This Type adds Methods to add, remove or change the
-state of a queue entry. A corresponding functionality is provided with the open62541 server template ()
+state of a queue entry. A corresponding functionality is provided with the `swap-it-open62541-server-template <https://github.com/FraunhoferIOSB/swap-it-open62541-server-template>`_.
 
 RegistrySubscription
 ....................
 
-The variable Subscription_Objects is an array of BrowseNames of server Objects. The Objects specified within this list is mapped to a Device Registry
+The variable Subscription_Objects is an array of BrowseNames of server Objects. The Objects specified within this list is mapped to a `swap-it-registry-module <https://github.com/FraunhoferIOSB/swap-it-registry-module>`_
 when a server registers itself and makes itself available to execute services. Important Objects for the this list are the Objects Capabilities and Queue.
 Capabilities are required to filter suitable resource from the Device Registry. The Queue is required for the default resource assignment implemented in any Process agent.
 
 Services
 ..........
 
-The ModuleType predefines two services for each Module, which can be invoked to register or unregister a module within a DeviceRegsitry,
+The ModuleType predefines two services for each Module, which can be invoked to register or unregister a module within a `swap-it-registry-module <https://github.com/FraunhoferIOSB/swap-it-registry-module>`_,
 so that a server gets visible for process agents. Besides, the Services Object contains a registered variable that indicates whether the agent is already registered in a device registry or not.
 When instantiating a SubType of the ModuleType, it has to be ensured that the resource's
 service is added to the Services Object as a callable OPC UA Method.
@@ -64,8 +64,8 @@ of the resource within the shop floor, so that transport resources can find and 
 ServiceFinishedEventType
 ----------------------------------
 The abstract ServiceFinishedEventType is the base type for all service finished events that transmit the completion of a service execution to a process agent in case of a asynchronous service result.
-The ServiceFinishedEventType contains three properties, the ServiceExecutionResult, that indicates whether the service execution was suceessful or not, a service uuid and a task uuid which are used for process agents to identify
-the service and the task in which context the service was executed. these informations are important, since multiple process agent can be connected to a single resource and queue their services in the resource and wait for their specific
+The ServiceFinishedEventType contains three properties, the ServiceExecutionResult, that indicates whether the service execution was successful or not, a service uuid and a task uuid which are used for process agents to identify
+the service and the task in which context the service was executed. These information are important, since multiple process agent can be connected to a single resource and queue their services in the resource and wait for their specific
 ServiceFinishedEvent.
 
 .. figure:: /images/event.PNG
