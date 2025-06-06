@@ -17,6 +17,7 @@ a specific class of modules in a generic way.
 
 .. figure:: /images/ModuleType.PNG
    :alt: Definition of a resource specific SubType of the ModuleType
+   :class: center-image
 
 Capabilities
 ....................
@@ -37,7 +38,7 @@ it is user's decision whether to declare them or not.
 Queue
 ..........
 
-Contains a ServiceQueue Object that has a TypeDefinition of the QueueObjectType. This Type adds Methods to add, remove or change the
+Contains a ServiceQueue Object that has a TypeDefinition of the `QueueObjectType`_. This Type adds Methods to add, remove or change the
 state of a queue entry. A corresponding functionality is provided with the `swap-it-open62541-server-template <https://github.com/FraunhoferIOSB/swap-it-open62541-server-template>`_.
 
 RegistrySubscription
@@ -70,3 +71,20 @@ ServiceFinishedEvent.
 
 .. figure:: /images/event.PNG
    :alt: alternate text
+   :class: center-image
+   :width: 50%
+
+.. _QueueObjectType:
+
+QueueObjectType
+----------------------------------
+
+The QueueObjectType provides a set of functionalities to interact with a server's **read-only** *queue_variable*. The attached methods provide functionalities to interact with this *queue_variable*.
+Here, the *add_queue_element* methods allows to add a new element to the *queue_variable*. With the *remove_queue_element* method, a single element can be remove from the *queue_variable*. The invocation of the *move_queue_element* method
+allows to specify a new position for a single element and updates the *queue_variable* correspondingly. The *sort_queue_elements* method requires a prioritization list of elements as input, which is then interpreted and all elements are sorted correspondingly.
+Lastly, the *set_queue_element_state* method changes the state of an individual queue element to a target state, specified within the methods input argument.
+
+.. figure:: /images/QueueObjectType.png
+   :alt: alternate text
+   :width: 50%
+   :class: center-image
